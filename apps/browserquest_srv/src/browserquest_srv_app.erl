@@ -8,15 +8,13 @@
 %% ===================================================================
 %% Application callbacks
 %% ===================================================================
-
 start(_StartType, _StartArgs) ->
-
     application:start(lager),
     lager:set_loglevel(lager_console_backend, debug),
     
     %% {Host, list({Path, Handler, Opts})}
-    %% Dispatch the requests (whatever the host is) to
-    %% erws_handler, without any additional options.
+    %% Dispatch the requests (whatever the host is) to the server handler
+    %% without any additional options.
     ListeningPort = 
 	case application:get_env(listening_port) of
 	    undefined ->
@@ -29,7 +27,7 @@ start(_StartType, _StartArgs) ->
         {'_', browserquest_srv_handler, []}
     ]}],
     
-%%    lager:debug("Starting browserquest_srv on port ~p", [ListeningPort]),
+    lager:debug("Starting browserquest_srv on port ~p", [ListeningPort]),
 
     %% Name, NbAcceptors, Transport, TransOpts, Protocol, ProtoOpts
     %% Listen in 10100/tcp for http connections.
