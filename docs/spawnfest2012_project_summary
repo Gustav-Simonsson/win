@@ -1,0 +1,25 @@
+Name of project: wERLd
+Spawnfest 2012 git repo name: win
+Canonical repo URL after Spawnfest 2012: https://github.com/Gustav-Simonsson/win
+Description:
+    wERLd (named "win" in Spawnfest 2012) is a project aimed at creating a
+backend for the BrowserQuest game. BrowserQuest is a HTML5/JavaScript
+multiplayer game created as a proof of concept of a game running entirely on
+HTML5 and JS without requiring flash. It can be played in Firefox, Chrome,
+Safari, Opera, and runs on iOS and Android. It communicates with the server
+via websockets. 
+
+The default BrowserQuest server is written in Node.js. As the only
+communication between the client and server takes place through websockets,
+we wanted to reverse-engineer the server by looking at the source code in
+combination with actively looking at what the client sent through the websocket
+at game startup, and from there implement the required server functionality.
+
+During the Spawnfest 2012 competition, we managed to implement some of the map
+functionality, player movement, mobs and player-mob fighting. The final
+Spawnfest 2012 submission is taged as a git tag in the repo.
+
+We aim to maintain a stable master branch of the backend repo, and welcome
+pull requests. Future plans include supporting items, static entities such as
+NPCs and quests.
+
